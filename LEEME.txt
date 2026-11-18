@@ -1,0 +1,50 @@
+LIBREAPP · app instalable (PWA)
+================================
+
+Contenido de esta carpeta (subila COMPLETA, sin cambiar nombres):
+  index.html
+  manifest.webmanifest
+  sw.js
+  icons/  (4 imágenes)
+
+CÓMO PUBLICARLA (gratis, hace falta https)
+
+Opción A · Netlify Drop (la más rápida, sin cuenta técnica)
+  1. Entrá a https://app.netlify.com/drop
+  2. Arrastrá la carpeta descomprimida.
+  3. Te da una dirección https://....netlify.app
+
+Opción B · GitHub Pages
+  1. Creá un repositorio público y subí estos archivos a la raíz.
+  2. Settings > Pages > Deploy from a branch > main / (root).
+  3. Tu dirección queda https://TU-USUARIO.github.io/NOMBRE-DEL-REPO/
+
+CÓMO INSTALARLA EN ANDROID
+  1. Abrí la dirección en Chrome para Android.
+  2. Menú (⋮) del navegador > "Instalar app" (o "Agregar a la pantalla
+     principal"). También aparece "Instalar app" en el menú ☰ de LIBREAPP.
+  3. Se crea el ícono; abre en pantalla completa y sin barra del navegador.
+
+NOTAS
+  - Si cambiás index.html, subí también sw.js con VERSION distinta
+    (por ejemplo 'libreapp-v2') para que los celulares se actualicen.
+  - Abierta como archivo suelto (sin https) la app funciona igual, pero no
+    se puede instalar.
+
+CÓMO CONVERTIRLA EN APK (con PWABuilder, gratis y sin instalar nada)
+  1. Publicá la carpeta en https (Opción A o B de arriba).
+  2. Entrá a https://www.pwabuilder.com y pegá tu dirección https. "Start".
+  3. "Package for stores" > Android / Google Play.
+  4. Dejá "Signing key" en "New" (crea la llave de firma) y generá el paquete.
+  5. Descargá el .zip: adentro vienen el .apk (para instalar directo en tu
+     celular) y la llave (.keystore) con sus claves. GUARDÁ ESA LLAVE:
+     la necesitás para cualquier actualización futura.
+  6. Pasá el .apk al celular y abrilo. Android te va a pedir permitir
+     "instalar apps de orígenes desconocidos" para el navegador o el
+     administrador de archivos.
+  7. Para que la app NO muestre la barra de direcciones, PWABuilder te
+     entrega un archivo assetlinks.json: subilo a tu sitio en la ruta
+     /.well-known/assetlinks.json (sigue las instrucciones del .zip).
+
+El ícono de la app (launcher) sale de icons/maskable-512.png y
+icons/icon-512.png, que ya llevan tu logo.
